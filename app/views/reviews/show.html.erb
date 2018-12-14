@@ -1,0 +1,14 @@
+<h1>Food: <%= @food.name %></h1>
+<p><%= @review.content_body %> </p>
+<p><%= @review.author %> </p>
+<p>Rating: <%= @review.rating %>/5</p>
+
+
+<p><%= link_to "Delete Review", food_review_path(Type.find(@review.food_id), @review),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+
+
+
+<p><%= link_to "Return home", foods_path %></p>
