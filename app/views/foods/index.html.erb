@@ -1,6 +1,11 @@
 
 
 <h1> Recently Added Foods</h1>
+<ul>
+  <% @foods.three_recent().each do |food| %>
+    <li><%= food.name %></li>
+  <% end %>
+</ul>
 
 <h1>Top Reviewed Product</h1>
 
