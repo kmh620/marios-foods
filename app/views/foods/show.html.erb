@@ -1,22 +1,26 @@
 <h1><%= @food.name %></h1>
 
+<% if @food.reviews.any? %>
+  <h4>Here are the reviews for this food:</h4>
 
-<p><%= link_to "Edit Food", edit_food_path(@food) %></p>
+  <ul>
+    <% @food.reviews.each do |review| %>
+      <li>
+        <%= review.description %> |
+        <%= link_to "Edit", edit_food_review_path(@food, review) %> |
+        <%= link_to "Delete", food_review_path(@food, review),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
 
+<p><%= link_to "Add a review", new_food_review_path(@food) %></p>
 <p><%= link_to "Delete Food", food_path(@food),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
 
-<p><%= link_to "Add Review", food_review_path(@food) %></p>
-
- <% if food.reviews.any? %>
-
-     <ul>
-       <% food.reviews.each do |review| %>
-       <li><%= review.content_body %> | <%= review.author %></li>
-     <% end %>
-       </ul>
-
-     <% else %>
-     <p>There are no reviews to show</p>
-     <% end %>
+<p><%= link_to "Return home", foods_path %></p>
