@@ -1,5 +1,6 @@
-<h1><%= @food.name %></h1>
-<h5>Price: <%= @food.price %></h5>
+<h1>Mario's Specialty Foods</h1>
+<h2><%= @food.name %></h2>
+<h5>Price: $<%= @food.price %></h5>
 <h5>Country of origin: <%= @food.origin %></h5>
 
 <% if @food.reviews.any? %>
@@ -7,7 +8,7 @@
   <h4>Reviews:</h4>
   <ul>
     <% @food.reviews.each do |review| %>
-      <li>
+      <li id="review-list">
         <%= review.content_body %> <br> ~ <%= review.author %> <br> <%= review.rating %>/5 |
         <%= link_to "Delete", food_review_path(@food, review),
                                  :data => {:confirm => "Are you sure?",
