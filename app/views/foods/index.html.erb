@@ -14,6 +14,13 @@
   <% end %>
 </ul>
 
+<h1>Made in the USA</h1>
+<ul>
+<% @foods.usa_made().each do |food| %>
+  <li><%= link_to "#{food.name}", food_path(food) %>
+<% end %>
+</ul>
+
 
 
 <h1>All foods</h1>

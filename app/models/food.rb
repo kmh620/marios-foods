@@ -12,5 +12,7 @@ class Food < ActiveRecord::Base
     .order("reviews_count DESC")
     .limit(1)
     )}
+    scope :usa_made, -> { where origin: 'United States' }
+
 
 end
