@@ -1,0 +1,27 @@
+<h1><%= @food.name %></h1>
+
+
+
+<p><%= link_to "Add Review", new_food_review_path(@food)%></p>
+
+<p><%= link_to "Edit Food", edit_food_path(@food) %></p>
+
+<p><%= link_to "Delete Food", food_path(@food),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return Home", foods_path %></p>
+
+
+<% if @food.businesses.any? %>
+
+<ul>
+
+  <% @food.businesses.each do |business| %>
+  <li><%= link_to business.name, food_businesses %></li>
+<% end %>
+  </ul>
+
+<% else %>
+<p>There are no businesses. Add one below!</p>
+<% end %>

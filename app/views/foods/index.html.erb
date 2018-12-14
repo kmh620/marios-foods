@@ -9,13 +9,9 @@
                    :data => {:confirm => "You sure?",
                          :method => "delete"} %>
                               </li>
-
 <% end %>
   </ul>
 
 <% else %>
-<p>There are no foods. Add one below!</p>
+<p>There are no foods to show.</p>
 <% end %>
-
-
-<%= link_to "New Food", new_food_path %>
