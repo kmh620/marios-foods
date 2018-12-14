@@ -1,0 +1,21 @@
+<h1>All foods</h1>
+
+<% if @foods.any? %>
+
+<ul>
+
+  <% @foods.each do |food| %>
+  <li><%= food.name %> | <%= link_to "Add Business", new_food_business_path(food) %> | <%= link_to "Edit Type", edit_food_path(food) %> | <%= link_to "Delete Type", food_path(food),
+                   :data => {:confirm => "You sure?",
+                         :method => "delete"} %>
+                              </li>
+
+<% end %>
+  </ul>
+
+<% else %>
+<p>There are no foods. Add one below!</p>
+<% end %>
+
+
+<%= link_to "New Food", new_food_path %>
