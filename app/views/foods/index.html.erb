@@ -3,11 +3,16 @@
 <h1> Recently Added Foods</h1>
 <ul>
   <% @foods.three_recent().each do |food| %>
-    <li><%= food.name %></li>
+    <li><%= link_to "#{food.name}", food_path(food) %>
   <% end %>
 </ul>
 
 <h1>Top Reviewed Product</h1>
+<ul>
+  <% @foods.most_reviews().each do |food| %>
+    <li><%= link_to "#{food.name}", food_path(food) %>
+  <% end %>
+</ul>
 
 
 
