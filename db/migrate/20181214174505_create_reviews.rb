@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.column :author, :string
       t.column :content_body, :string
       t.column :rating, :integer
-      t.column :foods_id, :integer
+      t.column :food_id, :integer
 
       t.timestamps
     end

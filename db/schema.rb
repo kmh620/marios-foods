@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_174505) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "food_id"
   end
 
 end
