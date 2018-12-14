@@ -1,20 +1,27 @@
+<h1>Mario's Specialty Foods</h1>
 
-
-<h1> Recently Added Foods</h1>
+<h3> Recently Added Foods</h3>
 <ul>
   <% @foods.three_recent().each do |food| %>
     <li><%= link_to "#{food.name}", food_path(food) %>
   <% end %>
 </ul>
 
-<h1>Top Reviewed Product</h1>
+<h3>Highest Review</h3>
+<ul>
+  <% @foods.highest_review().each do |food| %>
+    <li><%= link_to "#{food.name}", food_path(food) %>
+  <% end %>
+</ul>
+
+<h3>Most Reviews</h3>
 <ul>
   <% @foods.most_reviews().each do |food| %>
     <li><%= link_to "#{food.name}", food_path(food) %>
   <% end %>
 </ul>
 
-<h1>Made in the USA</h1>
+<h3>Made in the USA</h3>
 <ul>
 <% @foods.usa_made().each do |food| %>
   <li><%= link_to "#{food.name}", food_path(food) %>
@@ -22,11 +29,8 @@
 </ul>
 
 
-
-<h1>All foods</h1>
-
+<h3>All foods</h3>
 <% if @foods.any? %>
-
   <ul>
     <% @foods.each do |food| %>
     <li><%= link_to "#{food.name}", food_path(food) %>

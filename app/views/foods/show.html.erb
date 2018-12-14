@@ -4,7 +4,7 @@
 
 <% if @food.reviews.any? %>
 
-  <h4>Here are the reviews for this food:</h4>
+  <h4>Reviews:</h4>
   <ul>
     <% @food.reviews.each do |review| %>
       <li>
@@ -16,7 +16,7 @@
     <% end %>
   </ul>
 <% else %>
-  <p>There are no reviews yet!</p>
+  <p>There are no reviews yet</p>
 <% end %>
 
 <p><%= link_to "Add a review", new_food_review_path(@food) %></p>
