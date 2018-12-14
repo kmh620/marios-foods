@@ -2,12 +2,9 @@
 <h5>Price: <%= @food.price %></h5>
 <h5>Country of origin: <%= @food.origin %></h5>
 
-
-
-
 <% if @food.reviews.any? %>
-  <h4>Here are the reviews for this food:</h4>
 
+  <h4>Here are the reviews for this food:</h4>
   <ul>
     <% @food.reviews.each do |review| %>
       <li>

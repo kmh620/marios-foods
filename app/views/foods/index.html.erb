@@ -1,14 +1,21 @@
+
+
+<h1> Recently Added Foods</h1>
+
+<h1>Top Reviewed Product</h1>
+
+
+
 <h1>All foods</h1>
 
 <% if @foods.any? %>
 
-<ul>
-
-  <% @foods.each do |food| %>
-  <li><%= link_to "#{food.name}", food_path(food) %> 
-<% end %>
+  <ul>
+    <% @foods.each do |food| %>
+    <li><%= link_to "#{food.name}", food_path(food) %>
+    <% end %>
   </ul>
 
-<% else %>
-<p>There are no foods to show.</p>
-<% end %>
+  <% else %>
+  <p>There are no foods to show.</p>
+  <% end %>
