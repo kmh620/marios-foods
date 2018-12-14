@@ -5,7 +5,7 @@
 <ul>
 
   <% @foods.each do |food| %>
-  <li><%= food.name %> | <%= link_to "Edit Food", edit_food_path(food) %> | <%= link_to "Delete Food", food_path(food),
+  <li><%= link_to "#{food.name}", food_path(food) %> | <%= link_to "Edit Food", edit_food_path(food) %> | <%= link_to "Delete Food", food_path(food),
                    :data => {:confirm => "You sure?",
                          :method => "delete"} %>
                               </li>
