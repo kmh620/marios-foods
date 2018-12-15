@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def new
     @food = Food.find(params[:food_id])
     @review = @food.reviews.new
@@ -26,6 +27,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:author, :content_body, :rating)
+    params.require(:review).permit(:author, :content_body, :rating, :food_id)
   end
 end
