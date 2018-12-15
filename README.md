@@ -23,6 +23,10 @@
 
 ### Bugs
   rspec showed failures but app worked as expected in server.
+  Failures:
+  * _Review does not have a food_id foreign key._
+  * _Shoulda::Matchers::ActiveModel::AllowValueMatcher::AttributeDoesNotExistError:The matcher attempted to set :origin on the Food to nil, but that attribute does not exist._
+  * _undefined method `price' for #<Food id: nil, name: nil, created_at: nil, updated_at: nil>_
 
 ### Technologies Used
 
